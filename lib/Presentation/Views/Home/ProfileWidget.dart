@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:quiz/Presentation/Views/ManageQuestions/ManageQuestionsView.dart';
 import 'package:quiz/Router.dart';
 
 class ProfileWidget extends StatelessWidget {
@@ -27,10 +29,13 @@ class ProfileWidget extends StatelessWidget {
                 title: Text('Quản lý đề'),
               ),
             ),
-            const Card(
+            Card(
               child: ListTile(
-                leading: Icon(Icons.question_mark_outlined),
-                title: Text('Ngân hàng câu hỏi'),
+                leading: const Icon(Icons.question_mark_outlined),
+                title: const Text('Ngân hàng câu hỏi'),
+                onTap: () {
+                  Navigator.of(context).push(CupertinoPageRoute(builder: (context) => const ManageQuestionsView()));
+                },
               ),
             ),
             const Card(
